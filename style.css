@@ -1,0 +1,91 @@
+/* styles.css */
+
+body,
+html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: Arial, sans-serif;
+}
+
+.gallery {
+  display: flex;
+  height: 100vh; /* Full viewport height */
+}
+
+.gallery-item {
+  flex: 1; /* Each item takes an equal share of the available width */
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  overflow: hidden;
+  display: flex;
+  align-items: flex-end; /* Align text to the bottom */
+  justify-content: center; /* Center horizontally */
+}
+
+.gallery-item::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); /* Dark overlay */
+  transition: backdrop-filter 0.3s, opacity 0.3s;
+  opacity: 0;
+  backdrop-filter: blur(0);
+  z-index: 1; /* Ensure it covers the background image */
+}
+
+.gallery-item:hover::before {
+  opacity: 1;
+  backdrop-filter: blur(4px); /* Apply dark blur effect on hover */
+}
+
+.gallery-item .details {
+  position: absolute;
+  bottom: 0;
+  z-index: 2; /* Ensure the text is above the blur effect */
+  background: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+  color: white;
+  text-align: center;
+  padding: 20px;
+  width: 100%; /* Full width */
+  transition: transform 0.3s, opacity 0.3s;
+  transform: translateY(0); /* Initially visible */
+  opacity: 1; /* Initially visible */
+}
+
+.gallery-item:hover .details {
+  transform: translateY(0); /* Ensure it remains in place on hover */
+  opacity: 1;
+}
+
+.details h3,
+.details p {
+  margin: 0;
+  padding: 5px 0;
+  text-transform: uppercase;
+}
+
+.details a {
+  margin: 0;
+  padding: 5px 0;
+  color: #00ffff; /* Cyan link color */
+  text-decoration: none;
+  font-weight: bold;
+  display: block; /* Ensure it takes up space */
+  opacity: 0; /* Initially hidden */
+  transform: translateY(20px); /* Start below */
+  transition: transform 0.3s, opacity 0.3s; /* Smooth transition */
+}
+
+.details a:hover {
+  text-decoration: underline;
+}
+
+.gallery-item:hover .details a {
+  opacity: 1; /* Become visible on hover */
+  transform: translateY(0); /* Slide up on hover */
+}

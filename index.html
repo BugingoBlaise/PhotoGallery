@@ -3,46 +3,49 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Responsive Gallery</title>
-    <link rel="stylesheet" href="styles.css" />
+    <title>Photo Gallery</title>
+    <link rel="stylesheet" href="style.css" />
   </head>
-
   <body>
     <div class="gallery">
-      <div class="gallery-item">
-        <img src="./images/tiger.jpg" alt="Fennec Fox" />
-        <div class="info">
-          <h3>Siberia Tigers</h3>
+      <div class="gallery-item" style="background-image: url('./imgs/fox.jpg')">
+        <div class="details">
+          <h3>Fennec Fox</h3>
           <p>India</p>
-          <button class="hidden">Know More</button>
+          <a href="#">Know more →</a>
         </div>
       </div>
-      <div class="gallery-item">
-        <img src="./images/wolf.jpg" alt="Humpback Whale" />
-        <div class="info">
-          <h3>Werewolf</h3>
+      <div
+        class="gallery-item"
+        style="background-image: url('./imgs/whale.jpg')"
+      >
+        <div class="details">
+          <h3>Humpback Whale</h3>
           <p>South Africa</p>
-          <button class="hidden">Know More</button>
+          <a href="#">Know more →</a>
         </div>
       </div>
-      <div class="gallery-item">
-        <img src="./images/wolfie.jpg" alt="Common Brown Baboon" />
-        <div class="info">
-          <h3>Wolf</h3>
-          <p>Europe</p>
-          <button class="hidden">Know More</button>
+      <div
+        class="gallery-item"
+        style="background-image: url('./imgs/baboon.jpg')"
+      >
+        <div class="details">
+          <h3>Common Brown Baboon</h3>
+          <p>South Africa</p>
+          <a href="#">Know more →</a>
         </div>
       </div>
-      <div class="gallery-item">
-        <img src="./images/Gorilla.jpg" alt="Common Brown Baboon" />
-        <div class="info">
-          <h3>Gorillas</h3>
-          <p>Rwanda</p>
-          <button class="hidden">Know More</button>
+      <div
+        class="gallery-item"
+        style="background-image: url('./imgs/deer.jpg')"
+      >
+        <div class="details">
+          <h3>Spotted Deer</h3>
+          <p>Amazon</p>
+          <a href="#">Know more →</a>
         </div>
       </div>
     </div>
-
     <script src="script.js"></script>
   </body>
 </html>
